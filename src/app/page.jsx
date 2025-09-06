@@ -15,7 +15,7 @@ export default function BirthdayApp() {
   const [isLoading, setIsLoading] = useState(true)
   const audioRef = useRef(null)
 
-  const birthdayDate = new Date("2025-08-31T00:00:00")
+  const birthdayDate = new Date("2025-01-31T00:00:00")
   const [isBirthdayOver, setisBirthdayOver] = useState(new Date().getTime() >= birthdayDate.getTime())
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function BirthdayApp() {
   // Play music only when triggered from Celebration
   const startMusic = () => {
     if (audioRef.current) {
+     audioRef.current.volume = 0.5; // Set volume to 50%
       audioRef.current.play();
     }
   };

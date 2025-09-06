@@ -46,6 +46,11 @@ export default function HappyBirthday({ onNext }) {
         y: yPos,
         message: messages[Math.floor(Math.random() * messages.length)]
       });
+     
+     // Clear the message after 3 seconds
+     setTimeout(() => {
+       setCurrentBalloon(null);
+     }, 3000);
     };
 
     return (
